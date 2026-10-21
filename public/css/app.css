@@ -1,0 +1,465 @@
+/* ==========================================================================
+   Soubla Salam Couture — styles de marque (mobile-first)
+   Palette : bordeaux (garance), or (tissu bazin), crème, encre
+   ========================================================================== */
+
+:root {
+    --ssc-bordeaux: #7b1e3a;
+    --ssc-bordeaux-dark: #5a1228;
+    --ssc-or: #d9a441;
+    --ssc-or-clair: #f3dfa8;
+    --ssc-creme: #faf6ef;
+    --ssc-encre: #2a2118;
+    --ssc-vert: #2e7d32;
+    --ssc-rouge: #d9534f;
+    --ssc-ardoise: #f6f1e9;
+    --radius: 14px;
+    --shadow: 0 10px 25px rgba(42, 33, 24, .08);
+}
+
+body {
+    background: var(--ssc-creme);
+    color: var(--ssc-encre);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+}
+
+h1, h2, h3, .font-decor {
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: .3px;
+}
+
+a { color: var(--ssc-bordeaux); }
+a:hover { color: var(--ssc-bordeaux-dark); }
+
+.text-bordeaux { color: var(--ssc-bordeaux) !important; }
+.text-or { color: var(--ssc-or) !important; }
+.bg-bordeaux { background-color: var(--ssc-bordeaux) !important; }
+.bg-or { background-color: var(--ssc-or) !important; }
+.bg-creme { background-color: var(--ssc-creme) !important; }
+.bg-ardoise { background-color: var(--ssc-ardoise) !important; }
+
+.btn {
+    --bs-btn-border-radius: 999px;
+    font-weight: 600;
+    min-height: 44px;
+}
+
+.btn-bordeaux {
+    --bs-btn-bg: var(--ssc-bordeaux);
+    --bs-btn-border-color: var(--ssc-bordeaux);
+    --bs-btn-color: #fff;
+    --bs-btn-hover-bg: var(--ssc-bordeaux-dark);
+    --bs-btn-hover-border-color: var(--ssc-bordeaux-dark);
+    --bs-btn-active-bg: var(--ssc-bordeaux-dark);
+    --bs-btn-active-border-color: var(--ssc-bordeaux-dark);
+}
+
+.btn-outline-bordeaux {
+    --bs-btn-color: var(--ssc-bordeaux);
+    --bs-btn-border-color: var(--ssc-bordeaux);
+    --bs-btn-hover-bg: var(--ssc-bordeaux);
+    --bs-btn-hover-border-color: var(--ssc-bordeaux);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-bg: var(--ssc-bordeaux);
+    --bs-btn-active-color: #fff;
+}
+
+.btn-or {
+    --bs-btn-bg: var(--ssc-or);
+    --bs-btn-border-color: var(--ssc-or);
+    --bs-btn-color: #402c05;
+    --bs-btn-hover-bg: #c3903a;
+    --bs-btn-hover-border-color: #c3903a;
+    --bs-btn-hover-color: #fff;
+}
+
+/* ==========================================================================
+   Navigation publique
+   ========================================================================== */
+
+.ssc-nav {
+    background: #fff;
+    border-bottom: 3px solid var(--ssc-or);
+    box-shadow: 0 2px 14px rgba(42, 33, 24, .06);
+}
+
+.ssc-nav .navbar-brand { font-weight: 800; }
+
+.ssc-nav .nav-link { font-weight: 600; min-height: 44px; }
+
+.navbar-toggler { border-color: var(--ssc-or); }
+
+.ssc-banner {
+    background: var(--ssc-bordeaux);
+    color: var(--ssc-or-clair);
+    font-size: .88rem;
+    padding: .45rem 1rem;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Bannière d'accueil
+   ========================================================================== */
+
+.ssc-hero {
+    position: relative;
+    color: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background:
+        linear-gradient(115deg, rgba(90, 18, 40, .94) 12%, rgba(123, 30, 58, .82) 55%, rgba(217, 164, 65, .55) 110%),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, .07) 0 14px, transparent 14px 28px);
+    padding: clamp(2rem, 6vw, 4.5rem);
+}
+
+.ssc-hero h1 { font-size: clamp(1.7rem, 4.5vw, 3rem); }
+
+.badge-occasion {
+    font-size: .72rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, .18);
+    border: 1px solid rgba(255, 255, 255, .4);
+    border-radius: 999px;
+    padding: .2rem .6rem;
+}
+
+/* ==========================================================================
+   Cartes et grilles du catalogue
+   ========================================================================== */
+
+.card-ssc {
+    border: 0;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: #fff;
+    transition: transform .15s ease;
+    overflow: hidden;
+}
+
+.card-ssc:hover { transform: translateY(-4px); }
+
+.card-ssc .photo-holder {
+    aspect-ratio: 3 / 4;
+    background: var(--ssc-ardoise);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-ssc .photo-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .25s ease;
+}
+
+.card-ssc:hover .photo-holder img { transform: scale(1.04); }
+
+.price-slot {
+    position: absolute;
+    inset: auto .6rem .6rem auto;
+    background: rgba(42, 33, 24, .82);
+    color: var(--ssc-or-clair);
+    border-radius: 999px;
+    padding: .18rem .7rem;
+    font-weight: 700;
+    font-size: .85rem;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    margin: 2.2rem 0 1rem;
+}
+
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--ssc-or), transparent);
+}
+
+.section-title h2 { font-size: 1.35rem; margin: 0; }
+
+/* ==========================================================================
+   Fiche modèle
+   ========================================================================== */
+
+.detail-photo {
+    width: 100%;
+    border-radius: var(--radius);
+    background: var(--ssc-ardoise);
+    object-fit: cover;
+    max-height: 480px;
+}
+
+.thumb-photo {
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    width: 74px;
+    height: 74px;
+    object-fit: cover;
+}
+
+.thumb-photo.active { border-color: var(--ssc-or); }
+
+.spec-line { display: flex; gap: .5rem; align-items: baseline; }
+.spec-line i { color: var(--ssc-or); }
+
+/* ==========================================================================
+   Frise de suivi de commande (mobile : verticale)
+   ========================================================================== */
+
+.timeline-ssc {
+    --dot: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline-ssc li {
+    display: flex;
+    gap: .9rem;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.timeline-ssc li::before {
+    content: "";
+    position: absolute;
+    left: calc(var(--dot) / 2 - 1px);
+    top: var(--dot);
+    bottom: 0;
+    width: 2px;
+    background: #e4d9c8;
+}
+
+.timeline-ssc li:last-child::before { display: none; }
+
+.timeline-ssc .dot {
+    width: var(--dot);
+    height: var(--dot);
+    flex: 0 0 auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: .8rem;
+    background: #e9e2d6;
+    color: #9c8d78;
+    z-index: 1;
+}
+
+.timeline-ssc li.done .dot { background: var(--ssc-vert); color: #fff; }
+.timeline-ssc li.current .dot { background: var(--ssc-or); color: #402c05; box-shadow: 0 0 0 4px #f3dfa8; }
+.timeline-ssc li.cancelled .dot { background: var(--ssc-rouge); color: #fff; }
+
+.timeline-ssc .label { font-weight: 600; line-height: var(--dot); }
+.timeline-ssc li.skipped .dot { opacity: .35; }
+
+@media (min-width: 992px) {
+    .timeline-ssc {
+        flex-direction: row;
+        text-align: center;
+        gap: .2rem;
+    }
+    .timeline-ssc li {
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        padding-bottom: .25rem;
+    }
+    .timeline-ssc li::before {
+        left: 50%;
+        top: var(--dot);
+        bottom: auto;
+        width: 100%;
+        height: 2px;
+        transform: translateY(-50%);
+    }
+    .timeline-ssc li:last-child::before { display: none; }
+    .timeline-ssc .label { margin-top: .4rem; font-size: .8rem; line-height: 1.2; }
+}
+
+/* ==========================================================================
+   Layout back-office (tableau de bord)
+   ========================================================================== */
+
+.app-shell { display: flex; min-height: 100vh; }
+
+.app-sidebar {
+    width: 250px;
+    flex: 0 0 auto;
+    background: linear-gradient(180deg, #37121f, var(--ssc-bordeaux-dark));
+    color: #e8d9c3;
+    padding: 1rem .8rem 2rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.app-sidebar .brand { color: #fff; font-weight: 800; font-size: 1.05rem; }
+.app-sidebar .brand small { color: var(--ssc-or); display: block; font-weight: 600; }
+
+.app-sidebar .nav-link {
+    color: #dcc9b2;
+    border-radius: 10px;
+    padding: .55rem .8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    min-height: 44px;
+}
+
+.app-sidebar .nav-link.active,
+.app-sidebar .nav-link:hover { background: rgba(217, 164, 65, .18); color: #fff; }
+
+.app-sidebar .nav-label {
+    color: var(--ssc-or);
+    text-transform: uppercase;
+    font-size: .68rem;
+    letter-spacing: .12em;
+    margin: 1rem .6rem .35rem;
+}
+
+.app-content { flex: 1 1 auto; min-width: 0; }
+
+.app-topbar {
+    background: #fff;
+    border-bottom: 1px solid #ece4d6;
+    padding: .65rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.stat-card {
+    border: 0;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: #fff;
+    padding: 1rem 1.15rem;
+    height: 100%;
+}
+
+.stat-card .value { font-size: 1.5rem; font-weight: 800; font-family: Georgia, serif; }
+.stat-card .hint { color: #8a7b67; font-size: .8rem; }
+
+app-badge, .stack-ico { font-size: 1.6rem; }
+
+/* Tableaux : en cartes sur mobile (exigence responsive) */
+.responsive-table thead { display: none; }
+
+@media (max-width: 767.98px) {
+    .responsive-table tbody tr {
+        display: block;
+        background: #fff;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        margin-bottom: .8rem;
+        padding: .75rem 1rem;
+    }
+    .responsive-table tbody td { display: flex; justify-content: space-between; gap: 1rem; border: 0; padding: .35rem 0; }
+    .responsive-table tbody td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        color: #8a7b67;
+        flex: 0 0 auto;
+        max-width: 40%;
+    }
+    .responsive-table tbody td.actions::before { content: none; }
+    .responsive-table tbody td.actions > div { width: 100%; }
+}
+
+@media (min-width: 768px) {
+    .responsive-table thead { display: table-header-group; }
+}
+
+/* ==========================================================================
+   Divers
+   ========================================================================== */
+
+.page-wrap { max-width: 1180px; }
+
+.avatar-circle {
+    width: 42px; height: 42px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--ssc-or-clair); color: var(--ssc-bordeaux);
+    font-weight: 800;
+}
+
+.msg-bubble {
+    max-width: 85%;
+    border-radius: 14px;
+    padding: .55rem .85rem;
+    font-size: .92rem;
+}
+
+.msg-them { background: #fff; border: 1px solid #eee3d1; }
+.msg-me { background: var(--ssc-bordeaux); color: #fff; margin-left: auto; }
+.msg-meta { font-size: .7rem; opacity: .75; }
+
+.wash-note {
+    background: #fff8ec;
+    border: 1px dashed var(--ssc-or);
+    border-radius: var(--radius);
+    padding: .8rem 1rem;
+    font-size: .9rem;
+}
+
+.footer-ssc {
+    background: var(--ssc-encre);
+    color: #c8bda9;
+    margin-top: 3rem;
+}
+.footer-ssc a { color: var(--ssc-or-clair); }
+
+.drop-zone {
+    border: 2px dashed var(--ssc-or);
+    border-radius: var(--radius);
+    padding: 1rem;
+    text-align: center;
+    color: #97728a;
+    background: #fffdf7;
+}
+
+.pagination-ssc .page-link {
+    color: var(--ssc-bordeaux);
+    border-radius: 8px !important;
+    margin: 0 .15rem;
+    border: 0;
+    min-width: 38px;
+    text-align: center;
+}
+.pagination-ssc .page-item.active .page-link { background: var(--ssc-bordeaux); color: #fff; }
+
+.notifications-badge {
+    position: absolute;
+    top: -4px; right: -6px;
+    font-size: .65rem;
+}
+
+[data-bs-theme] .dropdown-menu { --bs-dropdown-border-radius: 12px; }
+
+.price { font-weight: 800; color: var(--ssc-bordeaux); white-space: nowrap; }
+
+.rating-stars i { color: var(--ssc-or); }
+
+.mobile-sticky-cta {
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    border-top: 1px solid #eee0c8;
+    padding: .65rem;
+    z-index: 5;
+}
+
+@media (min-width: 992px) {
+    .mobile-sticky-cta { position: static; border-top: 0; padding: 0; background: transparent; }
+}
